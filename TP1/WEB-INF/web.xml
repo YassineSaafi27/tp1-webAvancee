@@ -1,0 +1,137 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+         version="6.1">
+
+ 
+
+    <!-- LoggingFilter -->
+    <filter>
+        <filter-name>LoggingFilter</filter-name>
+        <filter-class>LoggingFilter</filter-class>
+
+        <init-param>
+            <param-name>message</param-name>
+            <param-value>LoggingFilter initialized successfully</param-value>
+        </init-param>
+    </filter>
+
+    <!-- SecurityFilter -->
+    <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>SecurityFilter</filter-class>
+    </filter>
+
+
+<!-- SecurityFilter FIRST -->
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/ListItems</url-pattern>
+    </filter-mapping>
+
+    <!-- LoggingFilter SECOND -->
+    <filter-mapping>
+        <filter-name>LoggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <!-- ============================== -->
+    <!-- SERVLET DECLARATIONS            -->
+    <!-- ============================== -->
+
+    <!-- FormServlet -->
+    <servlet>
+        <servlet-name>FormServlet</servlet-name>
+        <servlet-class>FormServlet</servlet-class>
+    </servlet>
+
+    <!-- ShowSession -->
+    <servlet>
+        <servlet-name>ShowSession</servlet-name>
+        <servlet-class>ShowSession</servlet-class>
+    </servlet>
+
+    <!-- ListItems -->
+    <servlet>
+        <servlet-name>ListItems</servlet-name>
+        <servlet-class>ListItems</servlet-class>
+    </servlet>
+
+    <!-- MVC Controller -->
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>controller.Controller</servlet-class>
+    </servlet>
+
+    <!-- ReadCookie -->
+    <servlet>
+        <servlet-name>ReadCookie</servlet-name>
+        <servlet-class>ReadCookie</servlet-class>
+    </servlet>
+
+    <!-- LoginServlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+
+    <!-- LogoutServlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>LogoutServlet</servlet-class>
+    </servlet>
+
+
+    <!-- ============================== -->
+    <!-- SERVLET MAPPINGS                -->
+    <!-- ============================== -->
+
+    <!-- FormServlet -->
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/FormServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ShowSession -->
+    <servlet-mapping>
+        <servlet-name>ShowSession</servlet-name>
+        <url-pattern>/ShowSession</url-pattern>
+    </servlet-mapping>
+
+    <!-- ListItems -->
+    <servlet-mapping>
+        <servlet-name>ListItems</servlet-name>
+        <url-pattern>/ListItems</url-pattern>
+    </servlet-mapping>
+
+    <!-- MVC Controller -->
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+
+    <!-- ReadCookie -->
+    <servlet-mapping>
+        <servlet-name>ReadCookie</servlet-name>
+        <url-pattern>/ReadCookie</url-pattern>
+    </servlet-mapping>
+
+    <!-- LoginServlet -->
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- LogoutServlet -->
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+
+</web-app>

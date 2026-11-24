@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Person Information Form</title>
+</head>
+<body>
+
+    <h1>Person Information Form</h1>
+
+    <form method="POST">
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br><br>
+
+        <label for="birthDay">Birth Date (mm/dd/yyyy):</label>
+        <input type="text" id="birthDay" name="birthDay"
+               placeholder="mm/dd/yyyy" required>
+        <br><br>
+
+        <p>Sex:</p>
+
+        <input type="radio" id="male" name="sex"
+               value="Male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="sex"
+               value="Female">
+        <label for="female">Female</label>
+
+        <br><br>
+
+        <!-- Button for FormServlet -->
+        <button type="submit" formaction="FormServlet">
+            Submit to FormServlet
+        </button>
+
+        <!-- Button for MVC Controller -->
+        <button type="submit" formaction="Controller">
+            Submit to Controller
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="ReadCookie">Read saved cookies</a>
+
+</body>
+</html>
